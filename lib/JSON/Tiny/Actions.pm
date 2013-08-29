@@ -39,9 +39,8 @@ method value:sym<array>($/)  { make $<array>.ast }
 method str($/)               { make ~$/ }
 
 method str_escape($/) {
-    if $<xdigit> {
-        # make chr(:16($<xdigit>.join));  # preferred version of next line, but it doesn't work on Niecza yet
-        make chr(eval "0x" ~ $<xdigit>.join);
+    if $<utf16_codepoint> {
+        make utf16.new( $<utf16_codepoint>.map('0x'~*)».Int ).decode();
     } else {
         my %h = '\\' => "\\",
                 '/'  => "/",

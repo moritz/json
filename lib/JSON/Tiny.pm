@@ -26,7 +26,9 @@ multi to-json(Str:D  $d) {
     '"'
     ~ $d.trans(['"',  '\\',   "\b", "\f", "\n", "\r", "\t"]
             => ['\"', '\\\\', '\b', '\f', '\n', '\r', '\t'])\
-            .subst(/<-[\c32..\c126]>/, { ord(~$_).fmt('\u%04x') }, :g)
+            .subst(/<-[\c32..\c126]>/, {
+                $_.Str.encode('utf-16').values».fmt('\u%04x').join
+            }, :g)
     ~ '"'
 }
 multi to-json(Positional:D $d) {
