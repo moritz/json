@@ -4,6 +4,7 @@ use JSON::Tiny;
 use Test;
 
 my @t =
+   ''            => Any,
    '{ "a" : 1 }' => { a => 1 },
    '[]'          => [],
    '{}'          => {},
