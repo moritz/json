@@ -46,6 +46,7 @@ multi to-json(Mu:D $s) {
 }
 
 sub from-json($text) is export {
+    return Any unless $text;
     my $a = JSON::Tiny::Actions.new();
     my $o = JSON::Tiny::Grammar.parse($text, :actions($a));
     return $o.ast;
