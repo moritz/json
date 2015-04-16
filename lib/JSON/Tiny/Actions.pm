@@ -47,8 +47,8 @@ my %h = '\\' => "\\",
         'r'  => "\r",
         '"'  => "\"";
 method str_escape($/) {
-    if $<xdigit> {
-        make chr(:16($<xdigit>.join));
+    if $<utf16_codepoint> {
+        make utf16.new( $<utf16_codepoint>.map({:16(~$_)}) ).decode();
     } else {
         make %h{~$/};
     }
