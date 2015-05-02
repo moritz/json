@@ -59,6 +59,6 @@ sub from-json($text) is export {
         X::JSON::Tiny::Invalid.new(source => $text).throw;
     }
     
-    return $o.ast;
+    return $o.made;
 }
 # vim: ft=perl6
