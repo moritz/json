@@ -1,4 +1,4 @@
-class JSON::Tiny::Actions;
+unit class JSON::Tiny::Actions;
 
 method TOP($/) {
     make $/.values.[0].made;

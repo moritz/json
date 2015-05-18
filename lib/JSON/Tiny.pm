@@ -13,7 +13,7 @@ It supports strings, numbers, arrays and hashes (no custom objects).
 
 =end pod
 
-module JSON::Tiny;
+unit module JSON::Tiny;
 
 use JSON::Tiny::Actions;
 use JSON::Tiny::Grammar;
