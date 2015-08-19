@@ -20,7 +20,7 @@ method array($/) {
 }
 
 method arraylist($/) {
-    make [$<value>>>.made];
+    make [$<value>.map(*.made)];
 }
 
 method string($/) {
