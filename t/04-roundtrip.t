@@ -1,5 +1,4 @@
 use Test;
-BEGIN { @*INC.push: 'lib' };
 use JSON::Tiny;
 
 my @s =
