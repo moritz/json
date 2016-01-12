@@ -1,7 +1,7 @@
 use v6;
 unit grammar JSON::Tiny::Grammar;
 
-token TOP       { ^ \s* [ <object> | <array> ] \s* $ }
+token TOP       { \s* <value> \s* }
 rule object     { '{' ~ '}' <pairlist>     }
 rule pairlist   { <pair> * % \,            }
 rule pair       { <string> ':' <value>     }

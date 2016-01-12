@@ -4,6 +4,9 @@ A simple Perl 6 module for serializing and deserializing JSON.
   say from-json('{ "a": 42 }').perl;
   say to-json { a => [1, 2, 'b'] };
 
+JSON::Tiny implements RFC7159, which is a superset of ECMA-404, in that it
+permits any value as a top-level JSON string, not just arrays and objects.
+
 All files (unless noted otherwise) can be used, modified and redistributed
 under the terms of the Artistic License Version 2. Examples (in the
 documentation, in tests or distributed as separate files) can be considered

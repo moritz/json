@@ -143,6 +143,7 @@ my @t =
         "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
     }
 }}>>,
+    Q<<"As of RFC 7159, a bare literal can be a JSON string too.">>,
     ;
 
 my @n =
@@ -151,7 +152,6 @@ my @n =
     '{ 3 : tru }',  # not quite true
     '{ "a : false }', # missing quote
     # stolen from JSON::XS, 18_json_checker.t
-    Q<<"A JSON payload should be an object or array, not a string.">>,
     Q<<{"Extra value after close": true} "misplaced quoted value">>,
     Q<<{"Illegal expression": 1 + 2}>>,
     Q<<{"Illegal invocation": alert()}>>,
