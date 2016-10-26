@@ -1,4 +1,5 @@
 {
+    "perl"        : "6.*",
     "name"        : "JSON::Tiny",
     "version"     : "*",
     "description" : "A minimal JSON (de)serializer",
