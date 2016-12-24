@@ -27,7 +27,7 @@ token string {
 }
 
 token str {
-    <-["\\\t\n]>+
+    <-["\\\t\x[0A]]>+
 }
 
 token str_escape {

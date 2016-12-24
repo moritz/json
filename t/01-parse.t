@@ -14,6 +14,8 @@ my @t =
     '[]',
     '[ ]',
     ' [ ] ',
+    # https://github.com/moritz/json/issues/24
+    qq/["\x[85]"]/,
     # stolen from JSON::XS, 18_json_checker.t, and adapted a bit
     Q<<[
     "JSON Test Pattern pass1",
