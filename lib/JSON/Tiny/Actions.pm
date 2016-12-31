@@ -24,9 +24,21 @@ method arraylist($/) {
 }
 
 method string($/) {
-    make +@$<str> == 1
+    my $str =  +@$<str> == 1
         ?? $<str>[0].made
         !! $<str>>>.made.join;
+
+    # see https://github.com/moritz/json/issues/25
+    # when a combining character comes after an opening quote,
+    # it doesn't become part of the quoted string, because
+    # it's stuffed into the same grapheme as the quote.
+    # so we need to extract those combining character(s)
+    # from the match of the opening quote, and stuff it into the string.
+    if $0.Str ne '"' {
+        my @chars := $0.Str.NFC;
+        $str = @chars[1..*].chrs ~ $str;
+    }
+    make $str
 }
 method value:sym<number>($/) { make +$/.Str }
 method value:sym<string>($/) { make $<string>.made }

@@ -1,17 +1,18 @@
 use v6;
-use JSON::Tiny::Grammar;
-use JSON::Tiny::Actions;
+use JSON::Tiny;
 use Test;
-
 
 my @t =
     '{ "a" : "b\u00E5" }' => { 'a' => 'bå' },
-    '[ "\u2685" ]' => [ '⚅' ];
+    '[ "\u2685" ]' => [ '⚅' ],
+    # issue #25
+    qq{"x\c[ZERO WIDTH JOINER]a"} => "x\c[ZERO WIDTH JOINER]a",
+    qq{"\c[ZERO WIDTH JOINER]"} => "\c[ZERO WIDTH JOINER]",
+    ;
 
 plan (+@t);
 for @t -> $p {
-    my $a = JSON::Tiny::Actions.new();
-    my $o = JSON::Tiny::Grammar.parse($p.key, :actions($a));
-    is-deeply $o.made, $p.value, "Correct data structure for «{$p.key}»"
-        or say "# Got: {$o.made.perl}\n# Expected: {$p.value.perl}";
+    my $got = from-json($p.key);
+    is-deeply $got, $p.value, "Correct data structure for «{$p.key}»"
+        or say "# Got: $got.perl()\n# Expected: {$p.value.perl}";
 }

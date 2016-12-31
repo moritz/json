@@ -16,6 +16,8 @@ my @t =
     ' [ ] ',
     # https://github.com/moritz/json/issues/24
     qq/["\x[85]"]/,
+    # https://github.com/moritz/json/issues/25
+    qq/["̥̞ͫͩ̉̎͊ỏ̟͙̞̻̻̹̹r̵̨͇̫̦̺̮̼ͭ,̷̧̬̲͈̤̤̅̉͛ͫ͠ ̣͕̝̳̗̲̩̣͗̋͘e̼ͩ̔̿̾̋̾͘a̸̙͙͔̜͙̳̻͊ͯͪͤͬ͊͆͠c̦̃̓̈̾͗́͝͝ḩ͉͓̦̯̞̆ ̵͇͍ͪ̀́w̷ͩ͗̃͒͏̲̼̯̕i̞̫̜̮̣̰͎̅̂͋̀ͅń̢̨̪̭̠̼͕͎̐́͆̅ͅd̰̤̝͎̹͕ͩ̃̏̃̍͊̔ȏ̶̼̺̪̾ͨ̈̄ͤ̄̚̕w̙̻̱̙̺͎͚̙ͧͪ̊̒̕͝ ̴̼̰̱͈̠ͤ̋̏̇͛&̠̺̟̞͎̳̻̙̽̓́̔̇ͩ͛ͧ̚ ̡̡̫̻͐̌̐̌ͬͦ̂͞"]/,
     # stolen from JSON::XS, 18_json_checker.t, and adapted a bit
     Q<<[
     "JSON Test Pattern pass1",
