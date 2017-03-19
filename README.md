@@ -2,9 +2,9 @@
 
 A simple Perl 6 module for serializing and deserializing JSON.
 
-  use JSON::Tiny;
-  say from-json('{ "a": 42 }').perl;
-  say to-json { a => [1, 2, 'b'] };
+    use JSON::Tiny;
+    say from-json('{ "a": 42 }').perl;
+    say to-json { a => [1, 2, 'b'] };
 
 # Supported Standards
 
