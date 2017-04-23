@@ -4,6 +4,7 @@
     "version"     : "*",
     "description" : "A minimal JSON (de)serializer",
     "depends"     : [ ],
+    "license":    "Artistic-2.0",
     "provides"    : {
         "JSON::Tiny"            : "lib/JSON/Tiny.pm",
         "JSON::Tiny::Actions"   : "lib/JSON/Tiny/Actions.pm",
