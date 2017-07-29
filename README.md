@@ -25,7 +25,7 @@ type
 
     zef install JSON::Tiny
 
-or from a checkout of this source treeor from a checkout of this source tree,
+or from a checkout of this source tree,
 
     zef install .
 
