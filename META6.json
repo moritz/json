@@ -1,7 +1,7 @@
 {
     "perl"        : "6.*",
     "name"        : "JSON::Tiny",
-    "version"     : "*",
+    "version"     : "1.0",
     "description" : "A minimal JSON (de)serializer",
     "depends"     : [ ],
     "license":    "Artistic-2.0",
