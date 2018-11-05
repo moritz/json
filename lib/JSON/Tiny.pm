@@ -52,6 +52,10 @@ multi to-json(Mu:D $s) {
     die "Can't serialize an object of type " ~ $s.WHAT.perl
 }
 
+multi to-json ( $_ where *.can('TO_JSON') ) {
+    to-json .TO_JSON
+}
+
 sub from-json($text) is export {
     my $a = JSON::Tiny::Actions.new();
     my $o = JSON::Tiny::Grammar.parse($text, :actions($a));
