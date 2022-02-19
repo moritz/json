@@ -18,7 +18,7 @@ unit module JSON::Tiny;
 use JSON::Tiny::Actions;
 use JSON::Tiny::Grammar;
 
-class X::JSON::Tiny::Invalid is Exception {
+class X::JSON::Tiny::Invalid is Exception is export {
     has $.source;
     method message { "Input ($.source.chars() characters) is not a valid JSON string" }
 }
